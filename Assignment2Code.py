@@ -23,9 +23,9 @@ def Area_Calculation(Radius:float, Pi:float):
 
 
 def Max_Power_Calculation(AirDensity_p:float, Area:float, WindSpeed:float):
-    # Solve for maximum power using the formula Pmax=0.5*p*A*v^3 with p being the variable defined as density of air, A being the previous value found during calculations, and v being the air speed given by the user
+    # Solving maximum power using: Pmax=0.5*p*A*v^3 with Pmax=0.5*density_of_air*Area*Air_speed_cubed
     MaxPow_J = 0.5 * AirDensity_p * Area * WindSpeed * WindSpeed * WindSpeed
-    MaxPow_kW = MaxPow_J / 1000
+    MaxPow_kW = MaxPow_J / 1000 #conversion from J to kW
     Rounded_MaxPow_kW = round(MaxPow_kW, 2) # rounds to two(2) decimal points
     
     # Print the rounded maximum power to the print window saying it is in kW
@@ -34,7 +34,7 @@ def Max_Power_Calculation(AirDensity_p:float, Area:float, WindSpeed:float):
 
 
 def Actual_Power_Calculation(MaxPow_kW:float, OperatingEfficiencyDecimal:float):
-    # Multiply the maximum power by the decimal version of the operating efficiency
+    # Multiply the maximum power by the decimal version of the operating efficiency to find actual power
     ActPow_kW = MaxPow_kW * OperatingEfficiencyDecimal
     Rounded_ActPow_kW = round(ActPow_kW, 2) # rounds to two(2) decimal points
     
@@ -65,4 +65,4 @@ def main():
  
     
 if __name__ == "__main__": #good formating for main call
-    main() #calling the main function so it actually prints
+    main() #calling the main function so it runs all the code
